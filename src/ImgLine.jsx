@@ -9,7 +9,7 @@ import Imgfive from "../src/assets/imgfive.png"
 
 const ImgLine = () => {
   return (
-    <section>
+    <section id="Flight">
         <Container>
             <Flex className={` items-center flex-wrap justify-between`}>
                 <img className=" p-4 cursor-pointer duration-300 rounded-2xl  hover:bg-white hover:shadow-2xl" src={Imgone} alt="img" />

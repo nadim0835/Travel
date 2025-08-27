@@ -75,10 +75,10 @@ function Footer() {
               </ul>
             </div>
             <div className="">
-                <h3 className=" font-bold font-Poppins text-black text-[35px] md:text-[21px] ">
+                <h3 className="  font-bold font-Poppins text-black text-[35px] md:text-[21px] ">
                Social
               </h3>
-                <Flex className={` cursor-pointer justify-start items-start`}>
+                <Flex className={` ml-[-20px] cursor-pointer justify-start items-start mt-2`}>
                     <img className=" hover:ring-2 rounded-[25px] duration-200"  src={fecebook} alt="" />
                     <img className=" hover:ring-2 rounded-[25px] duration-200"  src={Insta} alt="" />
                     <img className=" hover:ring-2 rounded-[25px] duration-200"  src={Twiter} alt="" />

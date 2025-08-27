@@ -24,10 +24,11 @@ function Navber() {
                     <ul className={` flex lg:flex-row flex-col lg:items-center lg:justify-between gap-2 lg:gap-[55px] absolute  left-[50%] transform translate-x-[-50%] lg:translate-x-0 duration-300 z-50   ${
               dDown ? "top-14" : "top-[-590px]"
             }  w-[94%] lg:w-fit   lg:static `}>
-                        <li><a className=" font-Poppins font-medium text-[20px] lg:text-[17px] text-[#212832] hover:text-[#DF6951] duration-300 " href="#">Desitnations</a></li>
-                        <li><a className=" font-Poppins font-medium text-[20px] lg:text-[17px] text-[#212832]  hover:text-[#DF6951] duration-300 " href="#">Hotels</a></li>
-                        <li><a className=" font-Poppins font-medium text-[20px] lg:text-[17px] text-[#212832]  hover:text-[#DF6951] duration-300" href="#">Flights</a></li>
-                        <li><a className=" font-Poppins font-medium text-[20px] lg:text-[17px] text-[#212832]  hover:text-[#DF6951] duration-300" href="#">Bookings</a></li>
+                        <li><a href="#Des" className=" font-Poppins font-medium text-[20px] lg:text-[17px] text-[#212832] hover:text-[#DF6951] duration-300 ">Desitnations</a></li>
+                       
+                        <li><a className=" font-Poppins font-medium text-[20px] lg:text-[17px] text-[#212832]  hover:text-[#DF6951] duration-300 " href="#Bookyour">Hotels</a></li>
+                        <li><a className=" font-Poppins font-medium text-[20px] lg:text-[17px] text-[#212832]  hover:text-[#DF6951] duration-300" href="#Flight">Flights</a></li>
+                        <li><a className=" font-Poppins font-medium text-[20px] lg:text-[17px] text-[#212832]  hover:text-[#DF6951] duration-300" href="#Booking">Bookings</a></li>
                         <li className=" flex justify-center items-center font-Poppins font-medium  text-[#212832] lg:py-[9px] lg:px-5 lg:border border-[#212832] rounded-[5px] cursor-pointer lg:ml-0 ml-9  hover:text-[#DF6951] duration-300 gap-1 lg:gap-0 text-[20px] lg:text-[17px] ">
                             <button className=" cursor-pointer ">Sign </button>
                             <span >up</span>

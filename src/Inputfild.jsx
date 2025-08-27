@@ -3,7 +3,7 @@ import { IoMdMail } from "react-icons/io";
 
 function Inputfild() {
   return (
-    <section className=" text-[#DFD7F9]  mt-[40px] lg:mt-[70px]">
+    <section id="Booking" className=" text-[#DFD7F9]  mt-[40px] lg:mt-[70px]">
       <Container>
         <h2 className=" text-center lg:pt-[50px] pt-[30px]    font-Poppins font-semibold text-[33px] text-[#5E6282] ">
           Subscribe to get information, latest news and other
