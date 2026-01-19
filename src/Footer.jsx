@@ -1,102 +1,189 @@
+'use client'
 import Container from "./Components/Container";
 import Footerimg from "../src/assets/foter.png";
-import Flex from "./Components/Flex";
-import fecebook from "../src/assets/Social.png"
+import facebook from "../src/assets/Social.png"
 import Insta from "../src/assets/Social (1).png"
-import Twiter from "../src/assets/Social (2).png"
-
-import palystore from "../src/assets/Play Store.png"
-import Gpalystore from "../src/assets/Google Play.png"
+import Twitter from "../src/assets/Social (2).png"
+import playstore from "../src/assets/Play Store.png"
+import googleplay from "../src/assets/Google Play.png"
+import { motion } from "framer-motion";
 
 function Footer() {
+  const footerLinks = {
+    company: ["About", "Careers", "Mobile"],
+    contact: ["Help/FAQ", "Press", "Affiliates"],
+    more: ["Airlinefees", "Airline", "Low fare tips"]
+  };
+
+  const socialIcons = [
+    { src: facebook, alt: "Facebook" },
+    { src: Insta, alt: "Instagram" },
+    { src: Twitter, alt: "Twitter" }
+  ];
+
+  const storeButtons = [
+    { src: googleplay, alt: "Google Play Store" },
+    { src: playstore, alt: "Apple App Store" }
+  ];
+
   return (
-    <div>
-      <footer className=" mt-[80px]">
-        <Container>
-          <Flex className={` ml-[25px] md:items-start flex-wrap gap-5  justify-center flex-col md:flex-row`}>
-            <div className=" md:w-[20%] w-[70%] ">
-              <img src={Footerimg} alt="" />
-              <p className=" font-Poppins md:text-[13px] text-8 text-[#5E6282] mt-[19px]">
-                Book your trip in minute, get full Control for much longer.
-              </p>
-            </div>
-            <div className="md:w-[17%] w-[70%] ">
-              <h3 className=" font-bold font-Poppins text-black text-[35px] md:text-[21px] ">
-                Company
-              </h3>
-              <ul>
-                <li className="text-[22px]  md:text-[18px] font-Poppins text-[#5E6282] font-medium  ">
-               About
-                </li>
-                <li className=" text-[22px]  md:text-[18px] font-Poppins text-[#5E6282] mt-1 md:mt-3 font-medium  ">
-                Careers
-                </li>
-              
-                <li className=" text-[22px]  md:text-[18px] font-Poppins text-[#5E6282] mt-1 md:mt-3 font-medium  ">
-                  Mobile
-                </li>
-              
-              </ul>
-            </div>
-             <div className="md:w-[17%] w-[70%] ">
-              <h3 className=" font-bold font-Poppins text-black text-[35px] md:text-[21px] ">
-              Contact
-              </h3>
-              <ul>
-                <li className="text-[22px]  md:text-[18px] font-Poppins text-[#5E6282] font-medium  ">
-                Help/FAQ
-                </li>
-                <li className=" text-[22px]  md:text-[18px] font-Poppins text-[#5E6282] mt-1 md:mt-3 font-medium  ">
-                Press
-                </li>
-              
-                <li className=" text-[22px]  md:text-[18px] font-Poppins text-[#5E6282] mt-1 md:mt-3 font-medium  ">
-                  About
-                </li>
-              
-              </ul>
-            </div>
-             <div className="md:w-[17%] w-[70%] ">
-              <h3 className=" font-bold font-Poppins text-black text-[35px] md:text-[21px] ">
-             More
-              </h3>
-              <ul>
-                <li className="text-[22px]  md:text-[18px] font-Poppins text-[#5E6282] font-medium  ">
-                Airlinefees
-                </li>
-                <li className=" text-[22px]  md:text-[18px] font-Poppins text-[#5E6282] mt-1 md:mt-3 font-medium  ">
-              Airline
-                </li>
-              
-                <li className=" text-[22px]  md:text-[18px] font-Poppins text-[#5E6282] mt-1 md:mt-3 font-medium  ">
-                  Low fare tips
-                </li>
-              
-              </ul>
-            </div>
-            <div className="">
-                <h3 className="  font-bold font-Poppins text-black text-[35px] md:text-[21px] ">
-               Social
-              </h3>
-                <Flex className={` ml-[-20px] cursor-pointer justify-start items-start mt-2`}>
-                    <img className=" hover:ring-2 rounded-[25px] duration-200"  src={fecebook} alt="" />
-                    <img className=" hover:ring-2 rounded-[25px] duration-200"  src={Insta} alt="" />
-                    <img className=" hover:ring-2 rounded-[25px] duration-200"  src={Twiter} alt="" />
-                </Flex>
-                <Flex className={` md:flex hidden justify-start gap-2 items-start mt-4`}>
-                    <img src={Gpalystore} alt="" />
-                    <img src={palystore} alt="" />
-                    
-                </Flex>
-            </div>
-          </Flex>
-                <p className=" md:ml-3 mt-10 md:mt-[74px] mb-[70px] text-center text-[14px] md:text-[18px] font-Poppins text-[#5E6282] font-medium  ">
-                All rights reserved@jadoo.com
-                </p>
+    <footer className="py-10 px-4 md:px-0 overflow-hidden">
+      <Container>
+        {/* Main Footer Content - Mobile Friendly */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8">
           
-        </Container>
-      </footer>
-    </div>
+          {/* Logo Section - Full width on mobile */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="col-span-1 sm:col-span-2 lg:col-span-1 mb-8 sm:mb-6 lg:mb-0"
+          >
+            <img 
+              src={Footerimg} 
+              alt="Jadoo Logo" 
+              className="h-10 w-auto mb-4 mx-auto sm:mx-0"
+            />
+            <p className="font-Poppins text-[#5E6282] text-sm text-center sm:text-left">
+              Book your trip in minute, get full Control for much longer.
+            </p>
+          </motion.div>
+
+          {/* Company Links */}
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-6"
+          >
+            <h3 className="font-bold font-Poppins text-black text-base sm:text-lg mb-3 text-center sm:text-left">
+              Company
+            </h3>
+            <ul className="space-y-2">
+              {footerLinks.company.map((item) => (
+                <li 
+                  key={item}
+                  className="font-Poppins text-[#5E6282] text-sm sm:text-base font-medium text-center sm:text-left cursor-pointer hover:text-[#FF7D68] transition-colors duration-300"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Contact Links */}
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="mb-6"
+          >
+            <h3 className="font-bold font-Poppins text-black text-base sm:text-lg mb-3 text-center sm:text-left">
+              Contact
+            </h3>
+            <ul className="space-y-2">
+              {footerLinks.contact.map((item) => (
+                <li 
+                  key={item}
+                  className="font-Poppins text-[#5E6282] text-sm sm:text-base font-medium text-center sm:text-left cursor-pointer hover:text-[#FF7D68] transition-colors duration-300"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* More Links */}
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mb-6"
+          >
+            <h3 className="font-bold font-Poppins text-black text-base sm:text-lg mb-3 text-center sm:text-left">
+              More
+            </h3>
+            <ul className="space-y-2">
+              {footerLinks.more.map((item) => (
+                <li 
+                  key={item}
+                  className="font-Poppins text-[#5E6282] text-sm sm:text-base font-medium text-center sm:text-left cursor-pointer hover:text-[#FF7D68] transition-colors duration-300"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Social & App Stores - Full width on mobile */}
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="col-span-1 sm:col-span-2 lg:col-span-1"
+          >
+            <h3 className="font-bold font-Poppins text-black text-base sm:text-lg mb-4 text-center sm:text-left">
+              Social
+            </h3>
+            
+            {/* Social Icons - Center on mobile */}
+            <div className="flex gap-3 mb-6 justify-center sm:justify-start">
+              {socialIcons.map((icon) => (
+                <div
+                  key={icon.alt}
+                  className="cursor-pointer"
+                >
+                  <img 
+                    src={icon.src} 
+                    alt={icon.alt}
+                    className="h-8 w-8 sm:h-9 sm:w-9 p-1.5 sm:p-2 bg-white rounded-full shadow-sm hover:shadow-md transition-all duration-300"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* App Store Buttons - Center on mobile */}
+            <div className="flex flex-col sm:flex-row lg:flex-col gap-3 items-center sm:items-start">
+              {storeButtons.map((store) => (
+                <div
+                  key={store.alt}
+                  className="cursor-pointer w-full sm:w-auto"
+                >
+                  <img 
+                    src={store.src} 
+                    alt={store.alt}
+                    className="h-9 sm:h-10 w-auto rounded hover:opacity-90 transition-opacity duration-300 mx-auto sm:mx-0"
+                  />
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Divider */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          className="h-px bg-gray-200 my-8 md:my-10"
+        />
+
+        {/* Copyright */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center px-4"
+        >
+          <p className="font-Poppins text-[#5E6282] text-xs sm:text-sm font-medium">
+            All rights reserved © {new Date().getFullYear()} jadoo.com
+          </p>
+        </motion.div>
+      </Container>
+    </footer>
   );
 }
 
